@@ -20,3 +20,13 @@ action "npm-publish" {
   args = "publish"
   secrets = ["NPM_AUTH_TOKEN"]
 }
+
+workflow "Shake Fingers" {
+  on = "pull_request"
+  resolves = ["Jessfraz/shaking-finger-action@master"]
+}
+
+action "Jessfraz/shaking-finger-action@master" {
+  uses = "Jessfraz/shaking-finger-action@master"
+  secrets = ["GITHUB_TOKEN"]
+}

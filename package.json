@@ -1,5 +1,5 @@
 {
-  "name": "feetee",
+  "name": "ttaacklee",
   "version": "0.2.4",
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/son7211/feettee"
+    "url": "https://github.com/son7211/ttaacklee"
   },
   "keywords": [
     "node",

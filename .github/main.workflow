@@ -21,12 +21,16 @@ action "npm-publish" {
   secrets = ["NPM_AUTH_TOKEN"]
 }
 
-workflow "deploy to Kubernetes" {
-  on = "release"
-  resolves = ["GitHub Action for Docker"]
-}
-
 action "GitHub Action for Docker" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   args = "build"
+}
+
+workflow "sms" {
+  on = "push"
+  resolves = ["new-action"]
+}
+
+action "new-action" {
+  uses = "owner/repo/path@ref"
 }

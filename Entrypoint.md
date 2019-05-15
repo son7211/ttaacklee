@@ -123,7 +123,7 @@ Note: The exec form is parsed as a JSON array, which means that you must use dou
 
 Note: Unlike the shell form, the exec form does not invoke a command shell. This means that normal shell processing does not happen. For example, `ENTRYPOINT [ "echo", "$HOME" ]` will not do variable substitution on $HOME. If you want shell processing then either use the shell form or execute a shell directly, for example: `ENTRYPOINT [ "sh", "-c", "echo $HOME" ]`. When using the exec form and executing a shell directly, as in the case for the shell form, it is the shell that is doing the environment variable expansion, not docker.
 
-### Shell form ENTRYPOINT example
+#### Shell form ENTRYPOINT example
 You can specify a plain string for the `ENTRYPOINT` and it will execute in `/bin/sh -c`. This form will use shell processing to substitute shell environment variables, and will ignore any `CMD` or `docker run` command line arguments. To ensure that `docker stop` will signal any long running `ENTRYPOINT` executable correctly, you need to remember to start it with `exec`:
 ```
 FROM ubuntu
@@ -182,7 +182,7 @@ user	0m 0.04s
 sys	0m 0.03s
 ```
 
-### Understand how CMD and ENTRYPOINT interact
+#### Understand how CMD and ENTRYPOINT interact
 Both `CMD` and `ENTRYPOINT` instructions define what command gets executed when running a container. There are few rules that describe their co-operation.
 
  1. Dockerfile should specify at least one of `CMD` or `ENTRYPOINT` commands.

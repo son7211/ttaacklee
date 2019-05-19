@@ -28,10 +28,16 @@ action "GitHub Action for Docker" {
 
 workflow "docker publish" {
   on = "push"
-  resolves = ["Docker Registry-1"]
+  resolves = ["Docker Registry"]
 }
 
 action "Docker Registry-1" {
   uses = "./"
-  args = "push ttaacklee:0.1"
+  args = "tag local-image:tagname ttaacklee:tagname"
+}
+
+action "Docker Registry" {
+  uses = "./"
+  needs = ["Docker Registry-1"]
+  args = "push ttaacklee:tagname"
 }

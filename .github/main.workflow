@@ -33,7 +33,7 @@ workflow "docker publish" {
 
 action "Docker Registry-1" {
   uses = "./"
-  args = "tag local-image:tagname ttaacklee:tagname"
+  args = "tag $GITHUB_REF:tagname ttaacklee:tagname"
 }
 
 action "Docker Registry" {

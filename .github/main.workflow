@@ -26,11 +26,12 @@ action "GitHub Action for Docker" {
   args = "build"
 }
 
-workflow "sms" {
+workflow "docker publish" {
   on = "push"
-  resolves = ["new-action"]
+  resolves = ["Docker Registry"]
 }
 
-action "new-action" {
-  uses = "owner/repo/path@ref"
+action "Docker Registry" {
+  uses = "./"
+  secrets = ["GITHUB_TOKEN"]
 }

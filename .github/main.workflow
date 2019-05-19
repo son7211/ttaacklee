@@ -33,5 +33,5 @@ workflow "docker publish" {
 
 action "Docker Registry-1" {
   uses = "./"
-  args = "push son7211:0.1"
+  args = "push ttaacklee:0.1"
 }

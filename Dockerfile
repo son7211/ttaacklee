@@ -9,5 +9,5 @@ LABEL "com.github.actions.color"="magenta"
 LABEL "com.github.actions.name"="Docker Registry"
 LABEL "com.github.actions.description"="This is an Action to publish to Docker Hub."
 COPY entrypoint.sh /entrypoint.sh
-
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

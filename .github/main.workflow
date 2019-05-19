@@ -33,11 +33,11 @@ workflow "docker publish" {
 
 action "Docker Registry-1" {
   uses = "./"
-  args = "tag $GITHUB_REF:tagname ttaacklee:tagname"
+  args = "tag local-image:$GITHUB_REF ttaacklee:$GITHUB_REF"
 }
 
 action "Docker Registry" {
   uses = "./"
   needs = ["Docker Registry-1"]
-  args = "push ttaacklee:tagname"
+  args = "push ttaacklee:$GITHUB_REF"
 }

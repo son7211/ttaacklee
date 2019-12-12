@@ -15,7 +15,7 @@ jobs:
       run: docker build . --file Dockerfile --tag john-test:v0.3 
       
     - name : docker login
-      run: docker login -u son7211 -p {{ secrets.GITHUB_TOKEN }} docker.pkg.github.com
+      run: docker login -u ${{ github.actor }} -p {{ secrets.GITHUB_TOKEN }} docker.pkg.github.com
     
     - name: Tag
       run: docker tag john-test:v0.3 docker.pkg.github.com//son7211/ttaacklee/john_test:1.3

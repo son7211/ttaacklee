@@ -7,10 +7,10 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+**버그설명**
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+**발생**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
